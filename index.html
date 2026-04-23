@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEO-analyse dkf.be — De Content Studio</title>
+<meta name="description" content="Onafhankelijke Ahrefs-gestuurde SEO-analyse van dkf.be — opgesteld door De Content Studio.">
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#F4EFE6;
+  --paper-2:#EAE2D2;
+  --ink:#15110D;
+  --ink-2:#3A322A;
+  --muted:#8A7E6E;
+  --rule:#D6CDB9;
+  --accent:#C4471A;
+  --accent-deep:#9A3613;
+  --forest:#1E3530;
+  --good:#2E6F4A;
+  --warn:#C4471A;
+  --bad:#8B1F1F;
+  --display:'Fraunces',Georgia,serif;
+  --body:'Manrope',-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --max:1080px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-weight:400;
+  font-size:17px;
+  line-height:1.65;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(at 12% 8%, rgba(196,71,26,.04) 0, transparent 40%),
+    radial-gradient(at 88% 92%, rgba(30,53,48,.05) 0, transparent 45%);
+  background-attachment:fixed;
+}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 20px}}
+
+/* ---------- Top bar ---------- */
+.topbar{
+  border-bottom:1px solid var(--rule);
+  padding:18px 0;
+  font-size:13px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:14px}
+.brand-mark{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:-.01em;
+  text-transform:none;
+  color:var(--ink);
+}
+.brand-tag{color:var(--muted);font-size:12px;text-transform:none;letter-spacing:.02em;font-style:italic;font-family:var(--display);font-weight:400}
+.topbar .meta{color:var(--muted);font-size:12px}
+
+/* ---------- Cover ---------- */
+.cover{padding:90px 0 60px;border-bottom:1px solid var(--rule)}
+.cover .eyebrow{
+  font-size:12px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:28px;
+}
+.cover h1{
+  font-family:var(--display);
+  font-weight:340;
+  font-size:clamp(44px,7vw,84px);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  font-variation-settings:"opsz" 144,"SOFT" 30;
+  margin-bottom:24px;
+}
+.cover h1 em{
+  font-style:italic;
+  font-weight:300;
+  color:var(--accent);
+  font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;
+}
+.cover .lede{
+  max-width:680px;
+  font-size:21px;
+  line-height:1.55;
+  color:var(--ink-2);
+  font-weight:300;
+  margin-bottom:40px;
+}
+.cover-meta{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  padding-top:32px;
+  border-top:1px solid var(--rule);
+}
+@media (max-width:720px){.cover-meta{grid-template-columns:repeat(2,1fr)}}
+.cover-meta dt{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:600;
+  margin-bottom:6px;
+}
+.cover-meta dd{font-family:var(--display);font-weight:500;font-size:18px;letter-spacing:-.01em}
+
+/* ---------- TL;DR ---------- */
+.tldr{
+  padding:50px 0;
+  background:var(--paper-2);
+  border-bottom:1px solid var(--rule);
+}
+.tldr .label{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:18px;
+}
+.tldr p{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(22px,2.6vw,30px);
+  line-height:1.4;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  max-width:820px;
+}
+.tldr p em{font-style:italic;color:var(--accent-deep)}
+
+/* ---------- Section header ---------- */
+section.chapter{padding:80px 0;border-bottom:1px solid var(--rule)}
+.section-head{
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:24px;
+  margin-bottom:48px;
+  align-items:start;
+}
+.section-num{
+  font-family:var(--display);
+  font-weight:300;
+  font-size:48px;
+  font-style:italic;
+  color:var(--accent);
+  line-height:.9;
+  font-variation-settings:"opsz" 144,"SOFT" 100;
+}
+.section-head h2{
+  font-family:var(--display);
+  font-weight:380;
+  font-size:clamp(30px,4.5vw,46px);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  font-variation-settings:"opsz" 144,"SOFT" 30;
+}
+.section-head .kicker{
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:700;
+  margin-bottom:14px;
+  display:block;
+}
+
+/* ---------- KPI grid ---------- */
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--rule);
+  background:var(--paper);
+  margin-bottom:32px;
+}
+@media (max-width:780px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi{
+  padding:28px 24px;
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  position:relative;
+}
+.kpi:nth-child(4n){border-right:none}
+.kpi:nth-last-child(-n+4){border-bottom:none}
+@media (max-width:780px){
+  .kpi{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .kpi:nth-child(2n){border-right:none}
+  .kpi:nth-last-child(-n+2){border-bottom:none}
+}
+.kpi .lbl{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:600;
+  margin-bottom:10px;
+}
+.kpi .val{
+  font-family:var(--display);
+  font-weight:380;
+  font-size:42px;
+  line-height:1;
+  letter-spacing:-.025em;
+  color:var(--ink);
+  font-variation-settings:"opsz" 144;
+}
+.kpi .val small{
+  font-family:var(--mono);
+  font-size:13px;
+  font-weight:400;
+  color:var(--muted);
+  margin-left:4px;
+  letter-spacing:0;
+}
+.kpi .group{
+  position:absolute;
+  top:14px;
+  right:16px;
+  font-size:9px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+}
+
+/* ---------- Prose ---------- */
+.prose{max-width:740px}
+.prose p{margin-bottom:18px;color:var(--ink-2)}
+.prose p strong{color:var(--ink);font-weight:600}
+.prose .pull{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:300;
+  font-size:24px;
+  line-height:1.4;
+  color:var(--accent-deep);
+  border-left:2px solid var(--accent);
+  padding:8px 0 8px 22px;
+  margin:24px 0;
+}
+
+/* ---------- Tables ---------- */
+.tbl-wrap{overflow-x:auto;margin:0 0 24px;border:1px solid var(--rule);background:var(--paper)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{
+  text-align:left;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:700;
+  padding:14px 14px;
+  border-bottom:1px solid var(--rule);
+  background:var(--paper-2);
+  white-space:nowrap;
+}
+tbody td{padding:13px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--paper-2)}
+td.num,th.num{font-family:var(--mono);font-size:13px;text-align:right;white-space:nowrap}
+td.kw{font-family:var(--display);font-weight:500;font-size:15px}
+.pill{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  border-radius:2px;
+  font-weight:700;
+  font-family:var(--body);
+}
+.pill.good{background:#D8E8DD;color:var(--good)}
+.pill.warn{background:#F4DDD0;color:var(--warn)}
+.pill.bad{background:#EFD0D0;color:var(--bad)}
+.pill.neut{background:var(--paper-2);color:var(--muted);border:1px solid var(--rule)}
+
+/* ---------- Chart ---------- */
+.chart-card{
+  border:1px solid var(--rule);
+  background:var(--paper);
+  padding:28px;
+  margin-bottom:24px;
+}
+.chart-card h3{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:-.01em;
+  margin-bottom:6px;
+}
+.chart-card .sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+svg.chart{width:100%;height:auto;display:block}
+.chart-axis text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
+.chart-grid line{stroke:var(--rule);stroke-width:1}
+.chart-line{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.chart-area{fill:url(#areaGrad)}
+.chart-dot{fill:var(--paper);stroke:var(--accent);stroke-width:2}
+.chart-anno{font-family:var(--body);font-size:11px;fill:var(--ink-2);font-weight:600}
+.chart-anno-line{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:2 3;opacity:.4}
+
+/* ---------- Findings list (numbered) ---------- */
+.findings{counter-reset:f}
+.finding{
+  display:grid;
+  grid-template-columns:64px 1fr;
+  gap:24px;
+  padding:28px 0;
+  border-bottom:1px dashed var(--rule);
+}
+.finding:last-child{border-bottom:none}
+.finding::before{
+  counter-increment:f;
+  content:"0" counter(f);
+  font-family:var(--display);
+  font-weight:300;
+  font-style:italic;
+  font-size:36px;
+  color:var(--accent);
+  line-height:1;
+  font-variation-settings:"opsz" 144,"SOFT" 100;
+}
+.finding h3{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:22px;
+  letter-spacing:-.015em;
+  margin-bottom:10px;
+  color:var(--ink);
+}
+.finding p{color:var(--ink-2)}
+
+/* ---------- Action cards ---------- */
+.actions{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:32px;
+}
+@media (max-width:840px){.actions{grid-template-columns:1fr}}
+.action{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  padding:28px 24px;
+  position:relative;
+}
+.action.priority{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.action.priority .num,.action.priority h3{color:var(--paper)}
+.action.priority p{color:var(--paper-2)}
+.action.priority .impact{color:var(--accent)}
+.action .num{
+  font-family:var(--display);
+  font-weight:300;
+  font-style:italic;
+  font-size:24px;
+  color:var(--accent);
+  margin-bottom:14px;
+  display:block;
+}
+.action h3{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:19px;
+  letter-spacing:-.01em;
+  margin-bottom:10px;
+  line-height:1.25;
+}
+.action p{font-size:14px;line-height:1.55;color:var(--ink-2);margin-bottom:14px}
+.action .impact{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--accent);
+}
+
+/* ---------- Steps (numbered, vertical) ---------- */
+.steps{margin-top:32px;counter-reset:s}
+.step{
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:24px;
+  padding:32px 0;
+  border-top:1px solid var(--rule);
+}
+.step:last-child{border-bottom:1px solid var(--rule)}
+.step::before{
+  counter-increment:s;
+  content:counter(s);
+  font-family:var(--display);
+  font-weight:340;
+  font-size:64px;
+  line-height:1;
+  color:var(--accent);
+  letter-spacing:-.04em;
+  font-variation-settings:"opsz" 144;
+}
+.step h3{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:24px;
+  letter-spacing:-.015em;
+  margin-bottom:12px;
+}
+.step p{color:var(--ink-2);margin-bottom:10px}
+.step .deliverable{
+  display:inline-block;
+  margin-top:6px;
+  font-size:12px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--forest);
+  background:var(--paper-2);
+  padding:5px 10px;
+  border:1px solid var(--rule);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  background:var(--ink);
+  color:var(--paper);
+  padding:60px 0 40px;
+  margin-top:0;
+}
+footer .grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+  margin-bottom:40px;
+}
+@media (max-width:720px){footer .grid{grid-template-columns:1fr;gap:28px}}
+footer h4{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:14px;
+}
+footer .signature{
+  font-family:var(--display);
+  font-weight:340;
+  font-size:32px;
+  line-height:1.15;
+  letter-spacing:-.02em;
+  margin-bottom:14px;
+}
+footer .signature em{font-style:italic;color:var(--accent)}
+footer p{font-size:14px;color:var(--paper-2);line-height:1.55}
+footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid rgba(244,239,230,.3)}
+footer a:hover{border-bottom-color:var(--accent)}
+footer .colophon{
+  border-top:1px solid rgba(244,239,230,.15);
+  padding-top:24px;
+  font-size:12px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+/* ---------- Print ---------- */
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .topbar,footer{break-inside:avoid}
+  section.chapter{break-inside:avoid;padding:30px 0}
+  .cover{padding:30px 0}
+  .action.priority{background:#fff;color:#000;border:1px solid #000}
+  .action.priority p{color:#333}
+}
+
+/* ---------- Reveal ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.cover>*{animation:rise .8s ease-out both}
+.cover h1{animation-delay:.05s}
+.cover .lede{animation-delay:.18s}
+.cover-meta{animation-delay:.32s}
+</style>
+</head>
+
+<body>
+
+<!-- =================== TOPBAR =================== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark">De Content Studio</span>
+      <span class="brand-tag">no-nonsense storytelling</span>
+    </div>
+    <div class="meta">SEO-rapport · vertrouwelijk</div>
+  </div>
+</div>
+
+<!-- =================== COVER =================== -->
+<div class="cover">
+  <div class="wrap">
+    <div class="eyebrow">Ahrefs-gestuurde SEO-analyse</div>
+    <h1>dkf.be — een micro-autoriteit op een <em>lekkende</em> structuur.</h1>
+    <p class="lede">Onafhankelijke lezing van het organisch zoekprofiel van het Kortrijkse boekhoudkantoor — wat werkt, wat lekt, en waar de groei realistisch zit.</p>
+    <dl class="cover-meta">
+      <div><dt>Klant</dt><dd>dkf.be</dd></div>
+      <div><dt>Sector</dt><dd>Boekhouding · Kortrijk</dd></div>
+      <div><dt>Snapshot</dt><dd>23 april 2026</dd></div>
+      <div><dt>Markt</dt><dd>België (NL)</dd></div>
+    </dl>
+  </div>
+</div>
+
+<!-- =================== TL;DR =================== -->
+<div class="tldr">
+  <div class="wrap">
+    <div class="label">In één paragraaf</div>
+    <p>De site leeft van brand-searches en één toevallige Franstalige ranking. Met <em>zes</em> organische keywords, een backlinkprofiel dat voor 95% al weggeërodeerd is, en de zwaarste commerciële keyword nog buiten pagina 1 — is dkf.be vandaag geen SEO-speler, maar een SEO-mogelijkheid.</p>
+  </div>
+</div>
+
+<!-- =================== 01 KERNCIJFERS =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <div>
+        <span class="kicker">Kerncijfers · Ahrefs · 23 apr 2026</span>
+        <h2>De cijfers in tien blokken.</h2>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi"><span class="group">Autoriteit</span><div class="lbl">Domain Rating</div><div class="val">7</div></div>
+      <div class="kpi"><span class="group">Autoriteit</span><div class="lbl">Ahrefs Rank</div><div class="val">21,7M<small>e</small></div></div>
+      <div class="kpi"><span class="group">Organisch</span><div class="lbl">Keywords (BE)</div><div class="val">6</div></div>
+      <div class="kpi"><span class="group">Organisch</span><div class="lbl">Top 3 keywords</div><div class="val">2</div></div>
+      <div class="kpi"><span class="group">Organisch</span><div class="lbl">Verkeer / maand</div><div class="val">62</div></div>
+      <div class="kpi"><span class="group">Organisch</span><div class="lbl">Verkeerswaarde</div><div class="val">$8.277</div></div>
+      <div class="kpi"><span class="group">Backlinks</span><div class="lbl">Live backlinks</div><div class="val">366</div></div>
+      <div class="kpi"><span class="group">Backlinks</span><div class="lbl">Live ref. domeinen</div><div class="val">37</div></div>
+      <div class="kpi"><span class="group">Backlinks</span><div class="lbl">All-time backlinks</div><div class="val">93.984</div></div>
+      <div class="kpi"><span class="group">Backlinks</span><div class="lbl">All-time ref. domeinen</div><div class="val">885</div></div>
+    </div>
+
+    <div class="prose">
+      <p class="pull">885 domeinen hebben ooit gelinkt. 37 doen dat nu nog. Dat is een retentie van 4,2%.</p>
+      <p>Die ratio is de meest sprekende lijn van het hele rapport. Bij organisch gegroeide sites is link-retentie typisch 30 tot 60%. Onder de 10% wijst bijna altijd op historische directory-spam, een vervallen netwerk, of een combinatie daarvan. Voor dkf.be is het alle drie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 02 DR EVOLUTIE =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <div>
+        <span class="kicker">Domain Rating · 24 maanden</span>
+        <h2>Trage groei, met een dip die het verhaal vertelt.</h2>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h3>Domain Rating evolutie</h3>
+      <div class="sub">april 2024 → april 2026 · maandelijkse Ahrefs-snapshot</div>
+
+      <svg class="chart" viewBox="0 0 820 280" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C4471A" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="#C4471A" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- gridlines (DR 3,4,5,6,7,8) -->
+        <g class="chart-grid">
+          <line x1="60" y1="40"  x2="800" y2="40"/>
+          <line x1="60" y1="88"  x2="800" y2="88"/>
+          <line x1="60" y1="136" x2="800" y2="136"/>
+          <line x1="60" y1="184" x2="800" y2="184"/>
+          <line x1="60" y1="232" x2="800" y2="232"/>
+        </g>
+
+        <!-- Y axis labels (DR 8,7,6,5,4,3) -->
+        <g class="chart-axis">
+          <text x="48" y="44"  text-anchor="end">8</text>
+          <text x="48" y="92"  text-anchor="end">7</text>
+          <text x="48" y="140" text-anchor="end">6</text>
+          <text x="48" y="188" text-anchor="end">5</text>
+          <text x="48" y="236" text-anchor="end">4</text>
+        </g>
+
+        <!--
+          Y-mapping: DR=8→y40, DR=3→y280; per unit DR = 48px; baseline at y280
+          X-mapping: 25 points, x=60 to 800 → step ≈ 30.83
+          Series: 3.6 3.5 3.2 3.2 3.3 3.4 4.2 4.6 5.0 6.0 6.0 6.0 6.0 6.0 6.0 7.0 7.0 7.0 7.0 6.0 6.0 6.0 6.0 7.0 7.0
+        -->
+
+        <!-- Area -->
+        <path class="chart-area" d="
+          M60,260.8
+          L90.83,265.6
+          L121.67,278.4
+          L152.5,278.4
+          L183.33,273.6
+          L214.17,268.8
+          L245,230.4
+          L275.83,211.2
+          L306.67,192
+          L337.5,144
+          L368.33,144
+          L399.17,144
+          L430,144
+          L460.83,144
+          L491.67,144
+          L522.5,96
+          L553.33,96
+          L584.17,96
+          L615,96
+          L645.83,144
+          L676.67,144
+          L707.5,144
+          L738.33,144
+          L769.17,96
+          L800,96
+          L800,280 L60,280 Z"/>
+
+        <!-- Line -->
+        <path class="chart-line" d="
+          M60,260.8
+          L90.83,265.6
+          L121.67,278.4
+          L152.5,278.4
+          L183.33,273.6
+          L214.17,268.8
+          L245,230.4
+          L275.83,211.2
+          L306.67,192
+          L337.5,144
+          L368.33,144
+          L399.17,144
+          L430,144
+          L460.83,144
+          L491.67,144
+          L522.5,96
+          L553.33,96
+          L584.17,96
+          L615,96
+          L645.83,144
+          L676.67,144
+          L707.5,144
+          L738.33,144
+          L769.17,96
+          L800,96"/>
+
+        <!-- key dots -->
+        <circle class="chart-dot" cx="60" cy="260.8" r="3.5"/>
+        <circle class="chart-dot" cx="337.5" cy="144" r="3.5"/>
+        <circle class="chart-dot" cx="522.5" cy="96" r="4.5" stroke-width="2.5"/>
+        <circle class="chart-dot" cx="645.83" cy="144" r="3.5"/>
+        <circle class="chart-dot" cx="800" cy="96" r="4.5" stroke-width="2.5"/>
+
+        <!-- annotations -->
+        <line class="chart-anno-line" x1="522.5" y1="96" x2="522.5" y2="20"/>
+        <text class="chart-anno" x="522.5" y="14" text-anchor="middle">piek DR 7 — jul 2025</text>
+
+        <line class="chart-anno-line" x1="645.83" y1="144" x2="645.83" y2="262"/>
+        <text class="chart-anno" x="645.83" y="276" text-anchor="middle">terugval DR 6 — nov 2025</text>
+
+        <line class="chart-anno-line" x1="60" y1="260.8" x2="60" y2="20"/>
+        <text class="chart-anno" x="60" y="14" text-anchor="start">DR 3,6 — apr 2024</text>
+
+        <!-- X axis labels -->
+        <g class="chart-axis">
+          <text x="60"   y="264" text-anchor="middle" dy="14">'24-Q2</text>
+          <text x="245"  y="264" text-anchor="middle" dy="14">'24-Q4</text>
+          <text x="430"  y="264" text-anchor="middle" dy="14">'25-Q2</text>
+          <text x="615"  y="264" text-anchor="middle" dy="14">'25-Q4</text>
+          <text x="800"  y="264" text-anchor="middle" dy="14">'26-Q2</text>
+        </g>
+
+        <!-- baseline -->
+        <line x1="60" y1="280" x2="800" y2="280" stroke="#15110D" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <div class="prose">
+      <p>De groei van DR 3,6 → 7 over twee jaar is reëel maar bescheiden. Veelzeggender is de <strong>dip in najaar 2025</strong>: telkens een tranche oudere directory-links wegvalt, zakt de score een punt. Dat is het patroon van een fundament dat geen eigen gewicht draagt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 03 KEYWORDS =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">03</div>
+      <div>
+        <span class="kicker">Organische keywords · België</span>
+        <h2>Zes keywords. Twee geven verkeer. Eén is Frans.</h2>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th class="num">Volume</th>
+            <th class="num">KD</th>
+            <th class="num">Pos</th>
+            <th class="num">Verkeer</th>
+            <th class="num">CPC ($)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="kw">fiduciaire</td><td class="num">400</td><td class="num">12</td><td class="num">3</td><td class="num">32</td><td class="num">$104</td><td><span class="pill warn">FR · niet doelgroep</span></td></tr>
+          <tr><td class="kw">dkf</td><td class="num">30</td><td class="num">0</td><td class="num">1</td><td class="num">17</td><td class="num">$218</td><td><span class="pill neut">brand</span></td></tr>
+          <tr><td class="kw">commv of bv</td><td class="num">150</td><td class="num">0</td><td class="num">9</td><td class="num">5</td><td class="num">$20</td><td><span class="pill good">blog werkt</span></td></tr>
+          <tr><td class="kw">boekhouder kortrijk</td><td class="num">150</td><td class="num">16</td><td class="num">12</td><td class="num">5</td><td class="num">$192</td><td><span class="pill warn">net buiten p1</span></td></tr>
+          <tr><td class="kw">boekhoudkantoor kortrijk</td><td class="num">80</td><td class="num">12</td><td class="num">10</td><td class="num">3</td><td class="num">$76</td><td><span class="pill warn">net buiten p1</span></td></tr>
+          <tr><td class="kw">wat is rekening courant</td><td class="num">200</td><td class="num">7</td><td class="num">65</td><td class="num">0</td><td class="num">$183</td><td><span class="pill bad">verspild</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p class="pull">De grootste traffic driver is een Frans woord op een Nederlandstalige site. De échte commerciële kern staat op positie 10 en 12.</p>
+      <p>"Boekhouder Kortrijk" en "boekhoudkantoor Kortrijk" zijn de zoekopdrachten waarop een Kortrijks kantoor zou moeten ranken. Het zit dichtbij — positie 10 en 12 — maar pagina 1 bestaat alleen tot positie 10. Het verschil tussen positie 12 en positie 3 is geen detail; dat is grofweg <strong>tien tot vijftien keer meer leadverkeer</strong>, op CPC-terminologie van $76 tot $192.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 04 TOP PAGES =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">04</div>
+      <div>
+        <span class="kicker">Top pagina's · organisch verkeer</span>
+        <h2>Twee homepages, één werkende blog, en een hoop dode URLs.</h2>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>URL</th><th class="num">Verkeer</th><th class="num">Kws</th><th>Top keyword</th><th class="num">Pos</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>dkf.be/</code></td><td class="num">32</td><td class="num">1</td><td>fiduciaire</td><td class="num">3</td></tr>
+          <tr><td><code>www.dkf.be/</code></td><td class="num">24</td><td class="num">3</td><td>dkf</td><td class="num">1</td></tr>
+          <tr><td><code>/nl/blog/nv-bv-of-commv…</code></td><td class="num">5</td><td class="num">1</td><td>commv of bv</td><td class="num">9</td></tr>
+          <tr><td><code>/nl/over-dkf</code></td><td class="num">1</td><td class="num">2</td><td>dkf</td><td class="num">2</td></tr>
+          <tr><td><code>/nl/blog/credit-rekening-courant…</code></td><td class="num">0</td><td class="num">1</td><td>wat is rekening courant</td><td class="num">65</td></tr>
+          <tr><td><code>/nl/e-facturatie</code></td><td class="num">0</td><td class="num">1</td><td>dkf</td><td class="num">7</td></tr>
+          <tr><td><code>/nl/e-facturatie-full</code></td><td class="num">0</td><td class="num">1</td><td>dkf</td><td class="num">12</td></tr>
+          <tr><td><code>/nl/mydkf</code></td><td class="num">0</td><td class="num">1</td><td>dkf</td><td class="num">6</td></tr>
+          <tr><td><code>/nl/jobs</code></td><td class="num">0</td><td class="num">1</td><td>dkf</td><td class="num">8</td></tr>
+          <tr><td><code>/nl/contact</code></td><td class="num">0</td><td class="num">1</td><td>dkf</td><td class="num">3</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>Twee URL-varianten van de homepage — <code>dkf.be/</code> en <code>www.dkf.be/</code> — ranken allebei en vechten om dezelfde autoriteit. Dat is geen SEO-keuze, dat is een server-configuratie die nooit beslist is. Eén canonical-301 lost dit op in een avond.</p>
+      <p>De pagina <code>/nl/e-facturatie</code> bestaat. Maar rankt enkel op <em>"dkf"</em> — niet op een enkele e-facturatie of Peppol zoekopdracht. In het tijdperk van verplichte Belgische e-invoicing voor B2B is dat de meest evidente onbenutte hub van de site.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 05 BACKLINKS =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">05</div>
+      <div>
+        <span class="kicker">Backlinks · top 18 op DR</span>
+        <h2>Veel ruis. Twee échte bondgenoten.</h2>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Domein</th><th class="num">DR</th><th class="num">Links</th><th>Aard</th><th>Oordeel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>apple.com</td><td class="num">97</td><td class="num">1</td><td>Scrape, nofollow</td><td><span class="pill neut">artefact</span></td></tr>
+          <tr><td>blogspot.com</td><td class="num">95</td><td class="num">7</td><td>Sub-blog, 2020</td><td><span class="pill neut">verouderd</span></td></tr>
+          <tr><td>typepad.com</td><td class="num">91</td><td class="num">2</td><td>Sub-blog, 2015</td><td><span class="pill neut">verouderd</span></td></tr>
+          <tr><td>za.com</td><td class="num">90</td><td class="num">7</td><td>Spam-flagged</td><td><span class="pill bad">spam</span></td></tr>
+          <tr><td>com.ru</td><td class="num">86</td><td class="num">1</td><td>2016</td><td><span class="pill neut">verouderd</span></td></tr>
+          <tr><td>dyndns.org</td><td class="num">85</td><td class="num">9</td><td>Dynamic DNS, 2017</td><td><span class="pill neut">artefact</span></td></tr>
+          <tr><td>asean.org</td><td class="num">81</td><td class="num">10</td><td>Irrelevant, 2015</td><td><span class="pill neut">verouderd</span></td></tr>
+          <tr><td>atw.hu</td><td class="num">74</td><td class="num">13</td><td>HU free hosting</td><td><span class="pill bad">spam</span></td></tr>
+          <tr><td>rankyour.website</td><td class="num">74</td><td class="num">1</td><td>Spam-flagged</td><td><span class="pill bad">spam</span></td></tr>
+          <tr><td><strong>itaa.be</strong></td><td class="num">74</td><td class="num">4</td><td>Beroepsvereniging</td><td><span class="pill warn">verloren — heroveren</span></td></tr>
+          <tr><td>2link.be</td><td class="num">73</td><td class="num">4</td><td>BE-directory</td><td><span class="pill neut">directory</span></td></tr>
+          <tr><td>infobel.com</td><td class="num">73</td><td class="num">216</td><td>Bedrijvengids</td><td><span class="pill neut">directory</span></td></tr>
+          <tr><td>brandfetch.com</td><td class="num">72</td><td class="num">1</td><td>Logo-scrape</td><td><span class="pill neut">artefact</span></td></tr>
+          <tr><td><strong>kortrijk.be</strong></td><td class="num">72</td><td class="num">258</td><td>Stad Kortrijk</td><td><span class="pill good">relevant · actief</span></td></tr>
+          <tr><td>pc51.com</td><td class="num">70</td><td class="num">113</td><td>Spam-flagged</td><td><span class="pill bad">spam</span></td></tr>
+          <tr><td>goudengids.be</td><td class="num">69</td><td class="num">6</td><td>Directory</td><td><span class="pill neut">directory</span></td></tr>
+          <tr><td>pagesdor.be</td><td class="num">65</td><td class="num">4</td><td>Directory</td><td><span class="pill neut">directory</span></td></tr>
+          <tr><td><strong>mgiworld.com</strong></td><td class="num">60</td><td class="num">6</td><td>Accountants-netwerk</td><td><span class="pill good">relevant</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>Uit de top 18: <strong>twee échte links</strong> die zowel autoriteit als thematische relevantie hebben — kortrijk.be (lokaal anker) en mgiworld.com (accountants-netwerk). De ITAA-link, beroepsvereniging voor accountants, is verloren gegaan in 2021 — laaghangend fruit om terug op te vissen.</p>
+      <p>Vier domeinen zijn door Ahrefs zelf als spam gemarkeerd. Het gaat niet om die links te disavowen — Google negeert ze sinds 2016 — maar om de erkenning dat <em>er geen fundament van relevante links onder ligt</em>. Eén nieuwe link van <code>vlaanderen.be</code>, een KMO-koepel of een vakblad weegt zwaarder dan honderd directory-vermeldingen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 06 CONCURRENTEN =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">06</div>
+      <div>
+        <span class="kicker">Organische concurrenten · België</span>
+        <h2>Pia.be wijst de weg.</h2>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Concurrent</th><th class="num">DR</th><th class="num">Hun keywords</th><th class="num">Hun verkeer / mnd</th><th>Aard</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>pia.be</strong></td><td class="num">45</td><td class="num">337</td><td class="num">2.581</td><td>Direct peer · model</td></tr>
+          <tr><td>boekhoudkantoren.be</td><td class="num">30</td><td class="num">400</td><td class="num">1.777</td><td>Aggregator</td></tr>
+          <tr><td>kmoinsider.be</td><td class="num">49</td><td class="num">349</td><td class="num">891</td><td>Vakmedium</td></tr>
+          <tr><td>accofisc.be</td><td class="num">23</td><td class="num">40</td><td class="num">147</td><td>Direct peer · zelfde fase</td></tr>
+          <tr><td>dedhac.be</td><td class="num">11</td><td class="num">1</td><td class="num">68</td><td>Direct peer · zwakker</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>Pia.be — DR 45, 337 keywords, 2.581 bezoekers per maand — toont waar dkf.be naartoe kan. Niet door betere techniek of meer links, maar door <strong>content-breedte</strong>: 337 versus 6 keywords. Het verschil tussen beide is geen mysterie. Het is twee jaar consequent publiceren rond de juiste topics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 07 STRATEGISCHE LEZING =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">07</div>
+      <div>
+        <span class="kicker">Strategische lezing · zeven observaties</span>
+        <h2>Wat de data zegt — en wat ze niet zegt.</h2>
+      </div>
+    </div>
+
+    <div class="findings">
+      <div class="finding">
+        <div>
+          <h3>De site leeft van brand-searches.</h3>
+          <p>Acht van de tien top-pagina's ranken hoofdzakelijk op het woord "dkf". Brand-zoekverkeer is gezond — maar het bewijst alleen dat mensen die je al kennen je vinden. Het bouwt geen nieuwe doelgroep op.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div>
+          <h3>Er is een canonicalisatie-probleem.</h3>
+          <p>De varianten <code>dkf.be/</code> en <code>www.dkf.be/</code> ranken allebei voor verschillende keywords. Eén 301-redirect lost dit op en consolideert direct alle rankings op één URL.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div>
+          <h3>De content-breedte is structureel te smal.</h3>
+          <p>Zes keywords. Dat is geen markt-probleem; pia.be haalt er 337 in dezelfde markt. Dit is het gevolg van een lege blog en het ontbreken van een topical-cluster strategie.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div>
+          <h3>De Peppol/e-facturatie kans ligt onaangeraakt.</h3>
+          <p>Een <code>/nl/e-facturatie</code> URL bestaat, maar rankt op niets behalve "dkf". Met de verplichte e-invoicing voor B2B in België is dit hét cluster met de hoogste commerciële intentie voor een KMO-boekhouder in 2026.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div>
+          <h3>De backlink-basis is geen basis.</h3>
+          <p>4,2% link-retentie. Zes ooit-bestaande directories voor elk levend domein. De ITAA-link, de meest logische van allemaal, is sinds 2021 weg.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div>
+          <h3>De grootste traffic driver is niet de doelgroep.</h3>
+          <p>"Fiduciaire" — Frans voor accountantskantoor — levert het meeste verkeer. Voor een Vlaams KMO-kantoor is dit toevallige, niet-gekwalificeerde traffic. Het is geen strategie om op door te bouwen.</p>
+        </div>
+      </div>
+
+      <div class="finding">
+        <div>
+          <h3>De ROI zit niet in volume, maar in intent.</h3>
+          <p>Volledig geoptimaliseerd haalt dkf.be geen 50.000 bezoekers. Een realistisch plafond is 1.500 tot 2.500 per maand — maar op CPC's tussen $76 en $218. De waarde per lead is hoog. De kunst is niet veel verkeer; de kunst is het juiste verkeer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 08 QUICK WINS =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">08</div>
+      <div>
+        <span class="kicker">Quick wins · binnen 30 dagen</span>
+        <h2>Drie acties met de hoogste impact-per-uur.</h2>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="action priority">
+        <span class="num">i.</span>
+        <h3>Eén canonical kiezen.</h3>
+        <p>301-redirect tussen <code>dkf.be/</code> en <code>www.dkf.be/</code>. Eén htaccess-regel of CDN-rule. Rankings consolideren onmiddellijk op één URL.</p>
+        <span class="impact">Inzet: 1 uur · Impact: hoog</span>
+      </div>
+
+      <div class="action">
+        <span class="num">ii.</span>
+        <h3>"Wat is rekening courant" verbeteren.</h3>
+        <p>Bestaande blog op pos 65, KD 7, volume 200, CPC $183. Eén goed herwerkt artikel met juiste structuur, FAQ-sectie en interne links → realistisch positie 5-10.</p>
+        <span class="impact">Inzet: 1 dag · Impact: meetbaar</span>
+      </div>
+
+      <div class="action">
+        <span class="num">iii.</span>
+        <h3>ITAA-link heroveren.</h3>
+        <p>De link van itaa.be is verloren sinds 2021. Eén goede mail aan de beroepsvereniging om de bedrijvenpagina bij te werken weegt zwaarder dan 100 nieuwe directory-listings.</p>
+        <span class="impact">Inzet: 30 min · Impact: blijvend</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 09 NEXT STEPS BLOG =================== -->
+<section class="chapter">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">09</div>
+      <div>
+        <span class="kicker">Next steps · zodra de blog wordt ingevuld</span>
+        <h2>Vijf stappen voor een blog die wel doortelt.</h2>
+      </div>
+    </div>
+
+    <div class="prose" style="margin-bottom:8px">
+      <p>Quick wins zijn noodzakelijk maar niet voldoende. Pia.be's 337 keywords kwamen niet uit drie blogposts — ze kwamen uit twee jaar consequente, gestructureerde publicatie. Voor dkf.be ziet die weg er zo uit:</p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div>
+          <h3>Topic clusters definiëren.</h3>
+          <p>Kies vier thematische pijlers waar dkf.be autoriteit op wil bouwen — geen losse blogposts, maar samenhangende clusters. Voorstel: <strong>(1) Peppol &amp; e-facturatie</strong> · <strong>(2) Vennootschapsvormen voor starters</strong> · <strong>(3) Fiscaal advies voor KMO</strong> · <strong>(4) Lokaal/sector-specifiek (Kortrijk, retail, horeca)</strong>. Elke pijler krijgt een hub-pagina; alle artikels eronder linken naar boven en horizontaal.</p>
+          <span class="deliverable">Deliverable · cluster-document</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <h3>Per cluster een keyword-matrix.</h3>
+          <p>Via Ahrefs Keywords Explorer per pijler 30 tot 50 keywords mappen. Per keyword: volume, KD, intent (informational / commercial / transactional), prioriteringsscore. Streef naar een mix van easy wins (KD &lt; 15) en strategische middenmoot (KD 15-30). Resultaat: een werkdocument waaruit redactie maandelijks artikels kan trekken zonder opnieuw te brainstormen.</p>
+          <span class="deliverable">Deliverable · keyword-matrix .xlsx</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <h3>Content gap analyse versus peers.</h3>
+          <p>Trek uit Ahrefs alle keywords waar pia.be (337), boekhoudkantoren.be (400) en kmoinsider.be (349) op ranken — en dkf.be niet. Filter op relevantie en volume &gt; 50. Verwacht: een lijst van 30 tot 60 topics waar de markt al traffic op haalt en dkf.be afwezig is. Dit is geen creativiteit; dit is bewezen vraag oogsten.</p>
+          <span class="deliverable">Deliverable · gap-rapport</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <h3>Briefing-template &amp; auteursprofielen.</h3>
+          <p>Eén DCS-style briefing-template per artikel, met daarin: search intent, primaire + secundaire keywords, structuur (H2's, FAQ-sectie, samenvatting bovenaan), interne links, CTA, en — kritiek voor E-E-A-T in een fiscale niche — de auteur (naam, ITAA-erkenningsnummer, foto). Google rangschikt fiscaal-juridische content actief op <em>wie</em> het schrijft, niet alleen <em>wat</em>.</p>
+          <span class="deliverable">Deliverable · briefing-template + auteursprofielen</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div>
+          <h3>Editorial calendar 12 maanden + meting.</h3>
+          <p>Realistische frequentie van twee tot drie artikels per maand, twaalf maanden vooruit gepland per cluster. Eerst de bestaande blog herorganiseren en updaten; pas daarna nieuwe content. Meetstructuur per artikel: ranking-positie na 1/3/6 maanden, GSC-clicks, lead-attributie. Kwartaalreview: schrappen wat niet werkt, dubbelen wat wel werkt.</p>
+          <span class="deliverable">Deliverable · jaarkalender + KPI-dashboard</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h4>Opgesteld door</h4>
+        <div class="signature">De Content Studio<br><em>no-nonsense storytelling</em></div>
+        <p>Onafhankelijke contentstrategie, productie en analyse — vanuit de ervaring van een uitgever.</p>
+      </div>
+      <div>
+        <h4>Bron</h4>
+        <p>Ahrefs Site Explorer<br>Snapshot 23 april 2026<br>Markt: BE (Nederlands)</p>
+      </div>
+      <div>
+        <h4>Volgende stap</h4>
+        <p><a href="https://decontentstudio.be/contact/">Plan een werksessie</a> om de quick wins en het clusterplan in te plannen.</p>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 De Content Studio · Vertrouwelijk · enkel voor dkf.be</span>
+      <span>Versie 1.0 · 23.04.2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
